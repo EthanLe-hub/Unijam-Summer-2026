@@ -325,7 +325,7 @@ MonoBehaviour:
   groundCheck: {fileID: 6833538173503585698}
   ceilingCheck: {fileID: 4520514669538289102}
   crouchDisableCollider: {fileID: 3376138844881762103}
-  regularSpeed: 8
+  regularSpeed: 10
   crouchSpeed: 0.5
   jumpForce: 8
 --- !u!1 &8359371368138341751

@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // Player has two separate colliders: the top half and the bottom half.
     [SerializeField] Collider2D crouchDisableCollider; // This top half collider gets disabled when player crouches. 
 
-    [SerializeField] float regularSpeed = 8f; // Default speed of the player. 
+    [SerializeField] float regularSpeed = 10f; // Default speed of the player. 
     float currentSpeed; // Player's current speed. 
     [SerializeField] float crouchSpeed = 0.5f; // Crouch speed is half the regular speed. 
     [SerializeField] float jumpForce = 8f; // How high the player should jump. 

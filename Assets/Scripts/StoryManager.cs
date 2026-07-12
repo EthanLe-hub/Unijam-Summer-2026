@@ -30,6 +30,8 @@ public class StoryManager : MonoBehaviour
 
     private int currentIndex = 0; // Important to correspond the character line to the correct character art. 
 
+    static bool introComplete = false; 
+
     [SerializeField] float delayTime; // For any potential delays desired before showing the dialogue. 
 
     [SerializeField] bool isInMinigame = false; // Toggle between true or false if dialogue is happening in a minigame. 
@@ -58,9 +60,20 @@ public class StoryManager : MonoBehaviour
 
     void Start()
     {
+        currentIndex = 0; 
+
         playerScript = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>(); 
 
         dialoguePanel.SetActive(false); // Turn off the Dialogue Panel first. 
+
+        if (!isInMinigame && introComplete) // If we go back to the Hub Area after intro has already played. 
+        {
+            if (playerScript != null)
+            {   
+                playerScript.OnEnable(); // Re-enable other player inputs. 
+            }
+            return; // Gets out of Start() so intro does not play again every time you reload the Hub Area. 
+        }
 
         if (playerScript != null)
         {   
@@ -73,8 +86,6 @@ public class StoryManager : MonoBehaviour
         }
         else
         {
-            dialoguePanel.SetActive(true); 
-
             StartDialogue(characterLines, characterImages); 
         }
     }
@@ -82,8 +93,6 @@ public class StoryManager : MonoBehaviour
     IEnumerator DelayTime(float seconds)
     {
         yield return new WaitForSeconds(seconds); // Delay time. 
-
-        dialoguePanel.SetActive(true); 
 
         StartDialogue(characterLines, characterImages); 
     }
@@ -101,6 +110,15 @@ public class StoryManager : MonoBehaviour
     {
         characterLinesToDisplay = characterLinesSet; // Set the official array dialogue being displayed. 
         characterImagesToDisplay = characterImagesSet; // Set the official character art being displayed. 
+
+        if (playerScript != null)
+        {   
+            playerScript.OnDisable(); // Disable other player inputs during dialogue. 
+        }
+
+        currentIndex = 0; 
+
+        dialoguePanel.SetActive(true); 
 
         ShowCurrentLine(); 
     }
@@ -125,6 +143,11 @@ public class StoryManager : MonoBehaviour
             playerScript.OnEnable(); // Re-enable player input again. 
             DisableDialogue(); // Turn off dialogue panel when done with dialogue. 
 
+            if (!introComplete)
+            {
+                introComplete = true; 
+            }
+
             if (isInMinigame)
             {
                 if (timer != null)
@@ -137,6 +160,7 @@ public class StoryManager : MonoBehaviour
 
     void DisableDialogue()
     {
+        currentIndex = 0; 
         dialoguePanel.SetActive(false); 
     }
 }

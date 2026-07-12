@@ -36,7 +36,7 @@ public class MinigameDoor : MonoBehaviour
         {
             if (sceneNumber < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
             {
-                if (sceneNumber > 0)
+                if (sceneNumber >= 0)
                 {
                     UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneNumber); // Load the appropriate scene based on index. 
                     Debug.Log("Scene Number opened: " + sceneNumber); 
