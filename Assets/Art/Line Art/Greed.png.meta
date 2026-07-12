@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 5ffea972e354fb74c83815e3bdd8ecec
+guid: f512738b13436404aac976143cc332c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4252482162972736845
-    second: LuciferDisguise_0
+      213: -3120302708392793311
+    second: Greed_0
+  - first:
+      213: -5795522500151108076
+    second: Greed_1
+  - first:
+      213: 4431199947354488906
+    second: Greed_2
+  - first:
+      213: 4886276584104728216
+    second: Greed_3
+  - first:
+      213: 6933860398442789341
+    second: Greed_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LuciferDisguise_0
+      name: Greed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 960
-        height: 1080
+        x: 268
+        y: 4
+        width: 439
+        height: 1057
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b2435ed0062cf4c0800000000000000
-      internalID: -4252482162972736845
+      spriteID: 12bee82083572b4d0800000000000000
+      internalID: -3120302708392793311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed_1
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1052
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e95bafdfa229fa0800000000000000
+      internalID: -5795522500151108076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed_2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 1060
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a404bc6efd8ce7d30800000000000000
+      internalID: 4431199947354488906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed_3
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1061
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8961fd52aaa8fc340800000000000000
+      internalID: 4886276584104728216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 960
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9b4539b450a3060800000000000000
+      internalID: 6933860398442789341
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LuciferDisguise_0: -4252482162972736845
+      Greed_0: -3120302708392793311
+      Greed_1: -5795522500151108076
+      Greed_2: 4431199947354488906
+      Greed_3: 4886276584104728216
+      Greed_4: 6933860398442789341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
