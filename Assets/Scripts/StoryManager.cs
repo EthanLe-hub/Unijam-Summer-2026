@@ -62,7 +62,12 @@ public class StoryManager : MonoBehaviour
     {
         currentIndex = 0; 
 
-        playerScript = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>(); 
+        // Find player if it exists (won't exist in minigame scenes)
+        GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+        if (playerObj != null)
+        {
+            playerScript = playerObj.GetComponent<Player>(); 
+        }
 
         dialoguePanel.SetActive(false); // Turn off the Dialogue Panel first. 
 
@@ -145,7 +150,10 @@ public class StoryManager : MonoBehaviour
         }
         else
         {
-            playerScript.OnEnable(); // Re-enable player input again. 
+            if (playerScript != null)
+            {
+                playerScript.OnEnable(); // Re-enable player input again. 
+            }
             DisableDialogue(); // Turn off dialogue panel when done with dialogue. 
 
             if (!introComplete)
