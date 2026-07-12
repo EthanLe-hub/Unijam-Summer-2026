@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 095753ddec3dd4c4e84037dfda6e1f9b
+guid: 4d6a2847f6cf9e147b1772edaa9ef095
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5624409748017524450
-    second: Player (1)_0
+      213: -6298454919727659970
+    second: greed pot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player (1)_0
+      name: greed pot_0
       rect:
         serializedVersion: 2
-        x: 148
-        y: 24
-        width: 474
-        height: 993
+        x: 2
+        y: 7
+        width: 44
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e11db22322512f1b0800000000000000
-      internalID: -5624409748017524450
+      spriteID: e3442d30f946798a0800000000000000
+      internalID: -6298454919727659970
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player (1)_0: -5624409748017524450
+      greed pot_0: -6298454919727659970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

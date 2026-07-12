@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     // Player has two separate colliders: the top half and the bottom half.
     [SerializeField] Collider2D crouchDisableCollider; // This top half collider gets disabled when player crouches. 
 
-    [SerializeField] float regularSpeed = 8f; // Default speed of the player. 
+    [SerializeField] float regularSpeed = 10f; // Default speed of the player. 
     float currentSpeed; // Player's current speed. 
     [SerializeField] float crouchSpeed = 0.5f; // Crouch speed is half the regular speed. 
     [SerializeField] float jumpForce = 8f; // How high the player should jump. 
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         controls.Player.Crouch.performed += _ => crouchPressed = true; // Set flag to true if player holds down on crouch. 
         controls.Player.Crouch.canceled += _ => crouchPressed = false; // Set flag to false when player lets go of crouch. 
 
-        //animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>(); 
         rigidBody = GetComponent<Rigidbody2D>(); 
     }
 
@@ -70,6 +70,11 @@ public class Player : MonoBehaviour
         Vector3 s = transform.localScale; // Normalize the vector based on character scale. 
         float ax = Mathf.Abs(s.x); // Absolute value of the current x direction. 
         transform.localScale = new Vector3(facingX * ax, s.y, s.z); // Officially shift the sprite's x direction, as needed. 
+
+        if (animator != null)
+        {
+            animator.SetFloat("speed", Mathf.Abs(moveInput.x)); 
+        }
     }
 
     void FixedUpdate() // We check if the player is touching the ground here:

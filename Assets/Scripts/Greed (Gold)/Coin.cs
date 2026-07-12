@@ -9,12 +9,19 @@ public class Coin : MonoBehaviour
     string potTag = "Pot"; 
 
     Rigidbody2D rigidBody; 
-
     Pot pot; 
     
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>(); 
+    }
+
+    void Update()
+    {
+        if (transform.position.y < -3.6f)
+        {
+            Destroy(gameObject); // Destroy the coin if not collected once it falls too far down. 
+        }
     }
 
     public void SetFallSpeedMultiplier(float gravityMultiplier)
