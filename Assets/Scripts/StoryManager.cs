@@ -132,6 +132,11 @@ public class StoryManager : MonoBehaviour
 
     void NextLine()
     {
+        if (characterLinesToDisplay == null || characterImagesToDisplay == null)
+        {
+            return; 
+        }
+
         currentIndex++; // Shift index.
 
         if (currentIndex < characterLinesToDisplay.Length && currentIndex < characterImagesToDisplay.Length)

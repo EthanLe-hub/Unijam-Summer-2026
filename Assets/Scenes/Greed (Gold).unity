@@ -401,7 +401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[4]'
-      value: Ya goal is simple. Get me 30 coins from da falling sky before time's
+      value: Ya goal is simple. Get me 30 coins falling from da sky before time's
         up.
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
