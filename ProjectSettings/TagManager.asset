@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Character Art
   - Dialogue Panel
+  - Pot
   layers:
   - Default
   - TransparentFX

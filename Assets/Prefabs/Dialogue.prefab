@@ -339,9 +339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c33d0cadfb59a4a867da178b0302a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryManager
+  dialoguePanel: {fileID: 5776848697835766071}
   characterLines: []
   characterImages: []
   delayTime: 2
+  isInMinigame: 0
+  timer: {fileID: 0}
 --- !u!1 &8663983214429484773
 GameObject:
   m_ObjectHideFlags: 0

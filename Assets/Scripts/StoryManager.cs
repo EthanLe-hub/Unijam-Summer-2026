@@ -23,12 +23,17 @@ public class StoryManager : MonoBehaviour
 
     [TextArea(3,5)]
     [SerializeField] string[] characterLines; // Holds all of the dialogue by indices.
-
     [SerializeField] Sprite[] characterImages; // Holds all of the character art by indices. 
+
+    string[] characterLinesToDisplay; // The official array dialogue being displayed. 
+    Sprite[] characterImagesToDisplay; // The official character art being displayed. 
 
     private int currentIndex = 0; // Important to correspond the character line to the correct character art. 
 
     [SerializeField] float delayTime; // For any potential delays desired before showing the dialogue. 
+
+    [SerializeField] bool isInMinigame = false; // Toggle between true or false if dialogue is happening in a minigame. 
+    [SerializeField] Timer timer; // Assign in Unity Inspector. 
 
     void Awake()
     {
@@ -37,8 +42,6 @@ public class StoryManager : MonoBehaviour
         {
             Debug.Log("Dialogue panel not found!"); 
         }
-
-        playerScript = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>(); 
 
         characterText = GetComponentInChildren<TextMeshProUGUI>(); 
         if (characterText == null)
@@ -55,6 +58,8 @@ public class StoryManager : MonoBehaviour
 
     void Start()
     {
+        playerScript = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>(); 
+
         dialoguePanel.SetActive(false); // Turn off the Dialogue Panel first. 
 
         if (playerScript != null)
@@ -70,7 +75,7 @@ public class StoryManager : MonoBehaviour
         {
             dialoguePanel.SetActive(true); 
 
-            ShowCurrentLine(); 
+            StartDialogue(characterLines, characterImages); 
         }
     }
 
@@ -80,7 +85,7 @@ public class StoryManager : MonoBehaviour
 
         dialoguePanel.SetActive(true); 
 
-        ShowCurrentLine(); 
+        StartDialogue(characterLines, characterImages); 
     }
 
     void Update()
@@ -92,18 +97,26 @@ public class StoryManager : MonoBehaviour
         }
     }
 
+    public void StartDialogue(string[] characterLinesSet, Sprite[] characterImagesSet)
+    {
+        characterLinesToDisplay = characterLinesSet; // Set the official array dialogue being displayed. 
+        characterImagesToDisplay = characterImagesSet; // Set the official character art being displayed. 
+
+        ShowCurrentLine(); 
+    }
+
     void ShowCurrentLine()
     {
-        characterText.text = characterLines[currentIndex]; // Index 0 of the array of character dialogues. 
+        characterText.text = characterLinesToDisplay[currentIndex]; // Index 0 of the array of character dialogues. 
 
-        characterArt.sprite = characterImages[currentIndex]; // Index 0 of the array of character art. 
+        characterArt.sprite = characterImagesToDisplay[currentIndex]; // Index 0 of the array of character art. 
     }
 
     void NextLine()
     {
         currentIndex++; // Shift index.
 
-        if (currentIndex < characterLines.Length && currentIndex < characterImages.Length)
+        if (currentIndex < characterLinesToDisplay.Length && currentIndex < characterImagesToDisplay.Length)
         {
             ShowCurrentLine(); 
         }
@@ -111,6 +124,14 @@ public class StoryManager : MonoBehaviour
         {
             playerScript.OnEnable(); // Re-enable player input again. 
             DisableDialogue(); // Turn off dialogue panel when done with dialogue. 
+
+            if (isInMinigame)
+            {
+                if (timer != null)
+                {
+                    timer.BeginTimer(); // Start the timer after dialogue ends, if we are in a minigame. 
+                }
+            }
         } 
     }
 
