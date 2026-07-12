@@ -105,31 +105,4 @@ public class GluttonyPlayer : MonoBehaviour
             }
         }
     }
-}// Gluttony (Orange) Minigame - Timer Bridge for StoryManager
-using UnityEngine;
-using TMPro;
-
-public class GluttonyTimer : MonoBehaviour
-{
-    // These fields match what StoryManager expects from Timer
-    public float timerLeft = 1f; // Dummy value, not used
-    public bool isTimerRunning = false;
-    
-    [SerializeField] GluttonyGameManager gameManager;
-    
-    // Called by StoryManager when dialogue ends
-    public void BeginTimer()
-    {
-        isTimerRunning = true;
-        
-        if (gameManager != null)
-        {
-            gameManager.StartGame();
-        }
-    }
-    
-    public float GetTimeLeft()
-    {
-        return timerLeft; // Always returns positive so game doesn't "end"
-    }
 }
