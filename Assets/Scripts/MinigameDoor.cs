@@ -14,11 +14,18 @@ public class MinigameDoor : MonoBehaviour
 
     [SerializeField] int sceneNumber; // Index of the Scene to load. 
 
+    [SerializeField] GameplayUI gameplayUI; // To show indicator on how to enter the minigame doors. 
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(playerTag))
         {
             inFrontOfDoor = true; 
+
+            if (inFrontOfDoor)
+            {
+                gameplayUI.ShowDoorButton(); 
+            }
         }
     }
 
@@ -27,6 +34,11 @@ public class MinigameDoor : MonoBehaviour
         if (other.gameObject.CompareTag(playerTag))
         {
             inFrontOfDoor = false; 
+
+            if (!inFrontOfDoor)
+            {
+                gameplayUI.HideDoorButton(); 
+            }
         }
     }
 
