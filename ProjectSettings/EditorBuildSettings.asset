@@ -8,6 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hub Area.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Lust (Pink).unity
+    guid: fa2c8fb9181812040b0eb31365d02b12
+  - enabled: 1
+    path: Assets/Scenes/Greed (Gold).unity
+    guid: 559853c1a5130dd49a73de6c188c1b69
+  - enabled: 1
+    path: Assets/Scenes/Wrath (Red).unity
+    guid: 10760b7aa9eb3674c95ef6c6e19ef569
+  - enabled: 1
+    path: Assets/Scenes/Gluttony (Orange).unity
+    guid: c1c08ee278e519045b9e7e9049f13e4c
+  - enabled: 1
+    path: Assets/Scenes/Envy (Green).unity
+    guid: 7391c2bef81d3144e8c2d751dcc1107e
+  - enabled: 1
+    path: Assets/Scenes/Sloth (Navy).unity
+    guid: d5e9f5eaa746ed24c98b05096bf314c6
+  - enabled: 1
+    path: Assets/Scenes/Pride (Black or White).unity
+    guid: 38a9f462baf21ca47adbaf40a4f3b59e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
