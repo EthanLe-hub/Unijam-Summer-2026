@@ -4,44 +4,43 @@ using TMPro;
 public class WrathGameManager : MonoBehaviour
 {
     [SerializeField] int clicksRequired = 300;
-    [SerializeField] float timeLimit = 60f;
     
     [SerializeField] TargetSpawner spawner;
+    [SerializeField] Timer timer;
 
     [SerializeField] TextMeshProUGUI clickCounterText;
-    [SerializeField] TextMeshProUGUI timerText;
 
     [SerializeField] GameObject endPanel;
     [SerializeField] TextMeshProUGUI endMessageText;
 
     int currentClicks;
-    float timeRemaining;
-    bool gameActive;
+    bool gameActive = false;
+    bool gameStarted = false;
     
     void Start()
     {
-        timeRemaining = timeLimit;
-        gameActive = true;
         endPanel.SetActive(false);
-
         spawner.Init(this);
-
-        spawner.BeginSpawning();
-        
         UpdateClickUI();
-        UpdateTimerUI();
         
-        // Debug.Log("Wrath minigame started! Need " + clicksRequired + " clicks in " + timeLimit + " seconds");
+        // Debug.Log("Wrath minigame ready, waiting for dialogue to finish...");
     }
     
     void Update()
     {
-        if (!gameActive) return;
+        // Wait for Timer to start (triggered by StoryManager after dialogue ends)
+        if (!gameStarted && timer != null && timer.isTimerRunning)
+        {
+            gameStarted = true;
+            gameActive = true;
+            spawner.BeginSpawning();
+            // Debug.Log("Dialogue done, game starting!");
+        }
         
-        timeRemaining -= Time.deltaTime;
-        UpdateTimerUI();
+        if (!gameActive) return;
 
-        if (timeRemaining <= 0f)
+        // Check if time ran out
+        if (timer.timerLeft <= 0f)
         {
             // Debug.Log("Time up! Final clicks: " + currentClicks);
             EndGame(currentClicks >= clicksRequired);
@@ -54,7 +53,6 @@ public class WrathGameManager : MonoBehaviour
 
         currentClicks++;
         UpdateClickUI();
-        
 
         // Debug.Log("Click registered: " + currentClicks + "/" + clicksRequired);
         
@@ -67,13 +65,13 @@ public class WrathGameManager : MonoBehaviour
     void EndGame(bool won)
     {
         gameActive = false;
+        timer.isTimerRunning = false;
         spawner.StopSpawning();
 
         endPanel.SetActive(true);
         
         if (won)
         {
-
             endMessageText.text = "WRATH CONQUERED!";
             // Debug.Log("Player won!");
         }
@@ -86,16 +84,7 @@ public class WrathGameManager : MonoBehaviour
     
     void UpdateClickUI()
     {
-        
         clickCounterText.text = currentClicks + " / " + clicksRequired;
-    }
-
-    void UpdateTimerUI()
-    {
-        int t = Mathf.Max(0, Mathf.CeilToInt(timeRemaining));
-        int mins = t / 60;
-        int secs = t % 60;
-        timerText.text = mins + ":" + secs.ToString("00");
     }
     
     public void ReturnToHub()

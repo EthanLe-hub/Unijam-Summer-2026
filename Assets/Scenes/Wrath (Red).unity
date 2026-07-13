@@ -213,6 +213,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1002282834}
   - {fileID: 956618115}
   - {fileID: 1526379982}
   - {fileID: 976337598}
@@ -359,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Return
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -386,8 +387,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 128
+  m_fontSizeBase: 128
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -551,6 +552,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976337597}
   m_CullTransparentMesh: 1
+--- !u!1001 &1002282833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 406224035}
+    m_Modifications:
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1380629162}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: isInMinigame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: characterLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: characterImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[0]'
+      value: (plac holder) wrath mini game you need to mash the target by ckiking
+        on the traget  multiple times ina limited time frame to prove o wrath you
+        are a good fighter
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5014520419438884369, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -224.36542
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 76.7027
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321753140033876865, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_Name
+      value: Dialogue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+--- !u!224 &1002282834 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+  m_PrefabInstance: {fileID: 1002282833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1012750678
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1098,7 @@ GameObject:
   - component: {fileID: 1380629159}
   - component: {fileID: 1380629160}
   - component: {fileID: 1380629161}
+  - component: {fileID: 1380629162}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1003,11 +1133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849106b4e111f445ab2ab6be11563451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WrathGameManager
-  clicksRequired: 300
-  timeLimit: 60
+  clicksRequired: 200
   spawner: {fileID: 1380629161}
+  timer: {fileID: 1380629162}
   clickCounterText: {fileID: 1012750680}
-  timerText: {fileID: 1128199832}
   endPanel: {fileID: 976337597}
   endMessageText: {fileID: 2073680993}
 --- !u!114 &1380629161
@@ -1026,6 +1155,21 @@ MonoBehaviour:
   targetPrefab: {fileID: 7411278420435048899, guid: 7d58e4303b06b4f47b584e72388af6a5, type: 3}
   targetLifetime: 1.2
   delayRange: {x: 0.1, y: 0.3}
+--- !u!114 &1380629162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380629158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb6ed8091aeaeb4ebf4492adbc541b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+  timerLeft: 75
+  isTimerRunning: 0
+  timerText: {fileID: 1128199832}
 --- !u!1 &1526379981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,8 +1418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2429, y: 46.8885}
-  m_SizeDelta: {x: 1368.9392, y: 659.7126}
+  m_AnchoredPosition: {x: -80.265, y: 182.93}
+  m_SizeDelta: {x: 1759.5, y: 365.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073680993
 MonoBehaviour:
@@ -1306,8 +1450,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190321
+  m_fontColor: {r: 0.9433962, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1324,14 +1468,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 240
-  m_fontSizeBase: 240
+  m_fontSize: 220
+  m_fontSizeBase: 220
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1363,7 +1507,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -155.34448, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
