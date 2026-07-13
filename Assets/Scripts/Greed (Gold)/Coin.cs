@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < -3.6f)
+        if (transform.position.y < -4f)
         {
             Destroy(gameObject); // Destroy the coin if not collected once it falls too far down. 
         }

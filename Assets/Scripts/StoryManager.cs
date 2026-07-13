@@ -2,6 +2,7 @@
 using System.Collections; // For IEnumerator. 
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement; 
 using UnityEngine.UI; 
 using TMPro; 
 
@@ -10,9 +11,8 @@ using TMPro;
 **/
 public class StoryManager : MonoBehaviour
 {
-    Player playerScript; // For disabling player inputs during dialogue sequence. 
-    string playerTag = "Player"; 
-
+    [SerializeField] Player playerScript; // For disabling player inputs during dialogue sequence. 
+    
     GameObject dialoguePanel; // Holds the background, character text, and character art. 
     string panelTag = "Dialogue Panel"; 
 
@@ -31,6 +31,9 @@ public class StoryManager : MonoBehaviour
     private int currentIndex = 0; // Important to correspond the character line to the correct character art. 
 
     static bool introComplete = false; 
+
+    [SerializeField] bool isBeginningCutscene = false; 
+    [SerializeField] int hubSceneNumber = 1; 
 
     [SerializeField] float delayTime; // For any potential delays desired before showing the dialogue. 
 
@@ -62,12 +65,7 @@ public class StoryManager : MonoBehaviour
     {
         currentIndex = 0; 
 
-        // Find player if it exists (won't exist in minigame scenes)
-        GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
-        if (playerObj != null)
-        {
-            playerScript = playerObj.GetComponent<Player>(); 
-        }
+        //playerScript = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>(); 
 
         dialoguePanel.SetActive(false); // Turn off the Dialogue Panel first. 
 
@@ -151,12 +149,16 @@ public class StoryManager : MonoBehaviour
         else
         {
             if (playerScript != null)
-            {
+            {   
                 playerScript.OnEnable(); // Re-enable player input again. 
             }
             DisableDialogue(); // Turn off dialogue panel when done with dialogue. 
 
-            if (!introComplete)
+            if (isBeginningCutscene) // Load hub scene if this was the beginning cutscene. 
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(hubSceneNumber); // Load the appropriate scene based on index. 
+            }
+            else if (!introComplete && !isBeginningCutscene)
             {
                 introComplete = true; 
             }
