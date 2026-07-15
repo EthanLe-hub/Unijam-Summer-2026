@@ -26,11 +26,14 @@ public class GreedGameManager : MonoBehaviour
     {
         if (!dialogueComplete)
         {
+            // Victory (player has collected required coin amount):
             if (potScript.GetCoinsCollected() >= potScript.GetCoinsNeeded() && timer.GetTimeLeft() > 0f)
             {
                 dialogueComplete = true; 
+                OverallGameManager.Instance.greedComplete = true; // Greed game has been complete. 
                 storyManager.StartDialogue(victoryCharacterLines, victoryCharacterImages); 
             }
+            // Defeat (player did not collect enough coins in time):
             else if (potScript.GetCoinsCollected() < potScript.GetCoinsNeeded() && timer.GetTimeLeft() <= 0f)
             {
                 dialogueComplete = true; 

@@ -13,6 +13,8 @@ public class StoryManager : MonoBehaviour
 {
     [SerializeField] Player playerScript; // For disabling player inputs during dialogue sequence. 
     
+    OverallGameManager overallGM; 
+
     GameObject dialoguePanel; // Holds the background, character text, and character art. 
     string panelTag = "Dialogue Panel"; 
 
@@ -63,13 +65,111 @@ public class StoryManager : MonoBehaviour
 
     void Start()
     {
+        overallGM = OverallGameManager.Instance;
+
         currentIndex = 0; 
 
         //playerScript = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>(); 
 
         dialoguePanel.SetActive(false); // Turn off the Dialogue Panel first. 
 
-        if (!isInMinigame && introComplete) // If we go back to the Hub Area after intro has already played. 
+        if (playerScript != null)
+        {   
+            playerScript.OnDisable(); // Disable other player inputs during dialogue. 
+        }
+
+        // After beating Lust:
+        if (overallGM.lustComplete && !overallGM.lustStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.lustCharacterLines, overallGM.lustCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.lustCharacterLines, overallGM.lustCharacterImages); 
+            }
+            overallGM.lustStoryDone = true; // Story is playing (mark as complete).
+        }
+        // After beating Greed:
+        else if (overallGM.greedComplete && !overallGM.greedStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.greedCharacterLines, overallGM.greedCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.greedCharacterLines, overallGM.greedCharacterImages); 
+            }
+            overallGM.greedStoryDone = true; // Story is playing (mark as complete).
+        }
+        // After beating Wrath:
+        else if (overallGM.wrathComplete && !overallGM.wrathStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.wrathCharacterLines, overallGM.wrathCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.wrathCharacterLines, overallGM.wrathCharacterImages); 
+            }
+            overallGM.wrathStoryDone = true; // Story is playing (mark as complete).
+        }
+        // After beating Gluttony:
+        else if (overallGM.gluttonyComplete && !overallGM.gluttonyStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.gluttonyCharacterLines, overallGM.gluttonyCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.gluttonyCharacterLines, overallGM.gluttonyCharacterImages); 
+            }
+            overallGM.gluttonyStoryDone = true; // Story is playing (mark as complete).
+        }
+        // After beating Envy:
+        else if (overallGM.envyComplete && !overallGM.envyStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.envyCharacterLines, overallGM.envyCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.envyCharacterLines, overallGM.envyCharacterImages); 
+            }
+            overallGM.envyStoryDone = true; // Story is playing (mark as complete).
+        }
+        // After beating Sloth:
+        else if (overallGM.slothComplete && !overallGM.slothStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.slothCharacterLines, overallGM.slothCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.slothCharacterLines, overallGM.slothCharacterImages); 
+            }
+            overallGM.slothStoryDone = true; // Story is playing (mark as complete).
+        }
+        // After beating Pride (the ending):
+        else if (overallGM.prideComplete && !overallGM.prideStoryDone)
+        {
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, overallGM.prideCharacterLines, overallGM.prideCharacterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(overallGM.prideCharacterLines, overallGM.prideCharacterImages); 
+            }
+            overallGM.prideStoryDone = true; // Story is playing (mark as complete).
+        }
+        else if (!isInMinigame && introComplete) // If we go back to the Hub Area after intro has already played. 
         {
             if (playerScript != null)
             {   
@@ -77,27 +177,24 @@ public class StoryManager : MonoBehaviour
             }
             return; // Gets out of Start() so intro does not play again every time you reload the Hub Area. 
         }
-
-        if (playerScript != null)
-        {   
-            playerScript.OnDisable(); // Disable other player inputs during dialogue. 
-        }
-
-        if (delayTime > 0f)
+        else // Otherwise, default dialogue to play in this specific Scene (unique per minigame Scene):
         {
-            StartCoroutine(DelayTime(delayTime)); // Start coroutine if any delays needed before showing dialogue. 
-        }
-        else
-        {
-            StartDialogue(characterLines, characterImages); 
+            if (delayTime > 0f)
+            {
+                StartCoroutine(DelayTime(delayTime, characterLines, characterImages)); // Start coroutine if any delays needed before showing dialogue. 
+            }
+            else
+            {
+                StartDialogue(characterLines, characterImages); 
+            }
         }
     }
 
-    IEnumerator DelayTime(float seconds)
+    IEnumerator DelayTime(float seconds, string[] characterLinesSet, Sprite[] characterImagesSet)
     {
         yield return new WaitForSeconds(seconds); // Delay time. 
 
-        StartDialogue(characterLines, characterImages); 
+        StartDialogue(characterLinesSet, characterImagesSet); 
     }
 
     void Update()
