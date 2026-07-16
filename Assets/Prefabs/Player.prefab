@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 7363869063606156858}
   - component: {fileID: 2431812533462317330}
   - component: {fileID: 5883991044843485790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acc26e89476a164a9268c35567d1c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  isPlayerControlled: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
