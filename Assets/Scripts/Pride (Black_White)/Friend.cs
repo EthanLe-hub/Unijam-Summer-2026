@@ -1,14 +1,16 @@
-// Ethan Le (7/11/2026):
+// Ethan Le (7/15/2026):
 using UnityEngine; 
 using UnityEngine.InputSystem; // For "Keyboard.current.someKey.wasPressedThisFrame" logic. 
 
 /** 
- * Script for managing player (Isabel) movement:
+ * Script to control Diego (Isabel's friend).
 **/
-public class Player : MonoBehaviour
-{
-    InputSystem_Actions controls;
-    Friend friendScript; // Only for the final level (Lucifer's minigame). 
+public class Friend : MonoBehaviour
+{   // This script gets attached to the same GameObject as Player.cs in ONLY the Pride level, but the moveable components (animator and rigidbody)
+    // will be assigned by tag since Diego (the friend) has to be a different entity than Isabel (the player). 
+
+    public InputSystem_Actions controls; // Player.cs will assign it from its class. 
+    Player playerScript; 
 
     Vector2 moveInput; // Holds direction of where the player will move. 
 
@@ -16,7 +18,7 @@ public class Player : MonoBehaviour
     bool crouchPressed; // Flag for when the player presses crouch. 
     bool isCrouching; // Flag for when the player is crouching (continuous). 
     bool isGrounded; // Flag for when the player is on the ground. 
-    public bool isPlayerControlled = true; // Switches to false when Diego (Friend.cs) is being controlled (only in Lucifer level). 
+    public bool isFriendControlled = false; // False is when Isabel (Player.cs) is being controlled (only in Lucifer level). 
 
     [SerializeField] private LayerMask whatIsGround; // Mask assigned in Unity Inspector determining what layer is the ground.
     [SerializeField] private Transform groundCheck; // Assign GameObject that was placed below the player's feet that is used to check if player touched the ground. 
@@ -33,85 +35,43 @@ public class Player : MonoBehaviour
     float facingX; // For the direction the player is facing (positive = right, negative = left). 
 
     Animator animator; 
+    GameObject friendObj; // Need to grab its Transform component so it faces appropriately when the player controls Diego. 
     Rigidbody2D rigidBody; // Holds the official component that moves the player. 
+    string friendTag = "Friend"; 
 
     void Awake()
     {
-        controls = new InputSystem_Actions(); // Initialize script that handles the player's input controls. 
-
-        controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Set up "listener" for when the player moves (gets Vector2 of the direction). 
-        controls.Player.Move.canceled += ctx => moveInput = Vector2.zero; // Set up "listener" for when the player stops moving (gets a zeroed Vector2, meaning stay still).
-
-        controls.Player.Jump.performed += _ => jumpPressed = true; // If the player jumps, set the flag to true. 
-
-        controls.Player.Crouch.performed += _ => crouchPressed = true; // Set flag to true if player holds down on crouch. 
-        controls.Player.Crouch.canceled += _ => crouchPressed = false; // Set flag to false when player lets go of crouch. 
-
-        friendScript = GetComponent<Friend>(); 
-        if (friendScript != null) // Only if the Friend.cs script is attached to the Player.cs's GameObject (meaning it is the final level against Lucifer).
+        // Diego's moveable components are in a different GameObject (since Friend.cs has to be attached to Player.cs's GameObject).
+        // So find these components by tag instead. 
+        friendObj = GameObject.FindGameObjectWithTag(friendTag); // Get Diego's GameObject. 
+        
+        if (friendObj != null)
         {
-            friendScript.controls = controls; // Set Diego's controls to be the same as Isabel's. 
+            animator = friendObj.GetComponent<Animator>(); 
+            rigidBody = friendObj.GetComponent<Rigidbody2D>(); 
         }
-
-        animator = GetComponent<Animator>(); 
-        rigidBody = GetComponent<Rigidbody2D>(); 
     }
 
     void Start()
     {
-        isPlayerControlled = true; 
-        if (friendScript != null) // Only found in the final level (Lucifer's minigame). 
+        if (controls != null)
         {
-            friendScript.isFriendControlled = false; 
-        }
-    }
+            controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Set up "listener" for when the player moves (gets Vector2 of the direction). 
+            controls.Player.Move.canceled += ctx => moveInput = Vector2.zero; // Set up "listener" for when the player stops moving (gets a zeroed Vector2, meaning stay still).
 
-    public void OnEnable() => controls?.Enable(); // Function to turn on player controls. 
-    public void OnDisable() => controls?.Disable(); // Function to turn off player controls. 
+            controls.Player.Jump.performed += _ => jumpPressed = true; // If the player jumps, set the flag to true. 
 
-    void Update() 
-    {
-        if (facingX == 0f) // Default. 
-        {
-            facingX = 1f; 
-        }
+            controls.Player.Crouch.performed += _ => crouchPressed = true; // Set flag to true if player holds down on crouch. 
+            controls.Player.Crouch.canceled += _ => crouchPressed = false; // Set flag to false when player lets go of crouch. 
 
-        // If Isabel (this) is currently being controlled and player presses E key, swap controls to Diego:
-        if (friendScript != null && Keyboard.current.eKey.wasPressedThisFrame) 
-        {
-            isPlayerControlled = !isPlayerControlled; // Opposite of current flag. 
-            friendScript.isFriendControlled = !isPlayerControlled; // Opposite of the flag that was just assigned in previous line. 
-            
-            ResetInputs(); // Ensures neither character gets stuck running/sliding. 
+            playerScript = GetComponent<Player>(); // Player.cs and Friend.cs scripts are in the same GameObject. 
 
-            friendScript.ResetInputs(); 
-            return; // Ends execution for this frame. 
-        }
-
-        if (isPlayerControlled) // Only allow input and movement if currently controlling the player. 
-        {
-            if (moveInput.x > 0f) // If the player is moving right, 
-            {
-                facingX = 1f; // then the player should face the right.
-            }
-            else if (moveInput.x < 0f) // If the player is moving left, 
-            {
-                facingX = -1f; // then the player should face the left. 
-            }
-
-            Vector3 s = transform.localScale; // Normalize the vector based on character scale. 
-            float ax = Mathf.Abs(s.x); // Absolute value of the current x direction. 
-            transform.localScale = new Vector3(facingX * ax, s.y, s.z); // Officially shift the sprite's x direction, as needed. 
-
-            if (animator != null)
-            {
-                animator.SetFloat("speed", Mathf.Abs(moveInput.x)); 
-            }
+            isFriendControlled = false; 
         }
     }
 
     // Helper method to stop movement slide when swapping:
-    private void ResetInputs()
+    public void ResetInputs()
     {
         moveInput = Vector2.zero; // Sets magnitude to 0. 
         jumpPressed = false; 
@@ -123,14 +83,43 @@ public class Player : MonoBehaviour
 
         if (animator != null)
         {
-            animator.SetFloat("speed", Mathf.Abs(moveInput.x)); // Ensure the animation resets to idle if player was running during swap. 
-            animator.SetBool("crouching", false); // Ensure the animation resets to idle if player was crouching during swap. 
+            animator.SetFloat("speed", Mathf.Abs(moveInput.x)); // Ensure animation resets to idle if Friend was running during swap. 
+            animator.SetBool("crouching", false); // Ensure animation resets to idle if Friend was crouching during swap. 
+        }
+    }
+
+    void Update() 
+    {
+        if (facingX == 0f) // Default. 
+        {
+            facingX = 1f; 
+        }
+
+        if (isFriendControlled) // Only allow input and movement if currently controlling the friend. 
+        {
+            if (moveInput.x > 0f) // If the player is moving right, 
+            {
+                facingX = 1f; // then the player should face the right.
+            }
+            else if (moveInput.x < 0f) // If the player is moving left, 
+            {
+                facingX = -1f; // then the player should face the left. 
+            }
+
+            Vector3 s = friendObj.transform.localScale; // Normalize the vector based on character scale. 
+            float ax = Mathf.Abs(s.x); // Absolute value of the current x direction. 
+            friendObj.transform.localScale = new Vector3(facingX * ax, s.y, s.z); // Officially shift the sprite's x direction, as needed. 
+
+            if (animator != null)
+            {
+                animator.SetFloat("speed", Mathf.Abs(moveInput.x)); 
+            }
         }
     }
 
     void FixedUpdate() // We check if the player is touching the ground here:
     {
-        if (isPlayerControlled) // Only allow input and movement if currently controlling the player. 
+        if (isFriendControlled) // Only allow input and movement if currently controlling the friend. 
         {
             isGrounded = false; 
 
@@ -157,7 +146,7 @@ public class Player : MonoBehaviour
 
     void HandleMovement()
     {
-        if (isPlayerControlled) // Only allow input and movement if currently controlling the player. 
+        if (isFriendControlled) // Only allow input and movement if currently controlling the friend. 
         {
             if (crouchPressed) // Player holds down crouch button = crouching. 
             {

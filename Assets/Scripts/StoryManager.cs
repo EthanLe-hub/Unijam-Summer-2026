@@ -253,7 +253,7 @@ public class StoryManager : MonoBehaviour
 
             if (isBeginningCutscene) // Load hub scene if this was the beginning cutscene. 
             {
-                UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(hubSceneNumber); // Load the appropriate scene based on index. 
+                TransitionManager.Instance.TransitionToNextScene(hubSceneNumber); // Load the appropriate scene based on index. 
             }
             else if (!introComplete && !isBeginningCutscene)
             {
