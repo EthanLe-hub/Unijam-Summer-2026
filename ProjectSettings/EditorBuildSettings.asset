@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: 5aad778b69ffc9944b5489c30baa0db7
+  - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 31cff8b27865e884d8db81a510f88de2
   - enabled: 1
@@ -32,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pride (Black or White).unity
     guid: 38a9f462baf21ca47adbaf40a4f3b59e
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: a149260e5f10807408ab24d2ba669eef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

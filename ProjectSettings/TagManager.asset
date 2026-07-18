@@ -8,6 +8,8 @@ TagManager:
   - Dialogue Panel
   - Pot
   - Friend
+  - Lava
+  - Cinemachine Camera
   layers:
   - Default
   - TransparentFX

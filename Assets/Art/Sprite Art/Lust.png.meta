@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c729df178b9229246b96b63ef520a2d6
+guid: 8185dcc76f2da2348a20262d496e0f67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4742395596939751917
-    second: Wrath Door_0
+      213: 5053914577511879895
+    second: Lust_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wrath Door_0
+      name: Lust_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 15
+        x: 47
+        y: 35
         width: 326
-        height: 589
+        height: 584
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31e8704b450af2eb0800000000000000
-      internalID: -4742395596939751917
+      spriteID: 7d493cd088c132640800000000000000
+      internalID: 5053914577511879895
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wrath Door_0: -4742395596939751917
+      Lust_0: 5053914577511879895
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

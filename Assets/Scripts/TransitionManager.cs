@@ -15,9 +15,7 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] float fadeDuration = 1f; // 1 second for the fade.
 
     bool isTransitioning = false; // True when new scene loads up to initiate transition. 
-    float timePassed; // Keeps track of how long it takes to fade (compares against fadeDuration to know when fade is done).
-
-    AsyncOperation asyncLoading; // Scene to load asynchronously. 
+    float timePassed; // Keeps track of how long it takes to fade (compares against fadeDuration to know when fade is done). 
 
     void Awake()
     {
@@ -60,7 +58,7 @@ public class TransitionManager : MonoBehaviour
         yield return StartCoroutine(Fading(0, 1)); 
 
         // (3) Load the next scene while screen is black:
-        asyncLoading = SceneManager.LoadSceneAsync(sceneNumber); 
+        AsyncOperation asyncLoading = SceneManager.LoadSceneAsync(sceneNumber); // Scene to load asynchronously.
 
         // Let scene fully load first:
         while (!asyncLoading.isDone)

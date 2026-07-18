@@ -32,15 +32,20 @@ public class StoryManager : MonoBehaviour
 
     private int currentIndex = 0; // Important to correspond the character line to the correct character art. 
 
+    [SerializeField] int titleSceneNumber = 0; 
+
     static bool introComplete = false; 
 
     [SerializeField] bool isBeginningCutscene = false; 
-    [SerializeField] int hubSceneNumber = 1; 
+    [SerializeField] int hubSceneNumber = 2; 
 
     [SerializeField] float delayTime; // For any potential delays desired before showing the dialogue. 
 
     [SerializeField] bool isInMinigame = false; // Toggle between true or false if dialogue is happening in a minigame. 
-    [SerializeField] Timer timer; // Assign in Unity Inspector. 
+    [SerializeField] Timer timer; // Assign in Unity Inspector (for games that have a time limit). 
+    [SerializeField] Record timerRecord; // Assign in Unity Inspector (for games that do not have a time limit and instead just records the player's time). 
+
+    [SerializeField] Lava lavaScript; // Assign in Unity Inspector ONLY for Lucifer (Pride) Unity Scene. 
 
     void Awake()
     {
@@ -245,28 +250,7 @@ public class StoryManager : MonoBehaviour
         }
         else
         {
-            if (playerScript != null)
-            {   
-                playerScript.OnEnable(); // Re-enable player input again. 
-            }
             DisableDialogue(); // Turn off dialogue panel when done with dialogue. 
-
-            if (isBeginningCutscene) // Load hub scene if this was the beginning cutscene. 
-            {
-                TransitionManager.Instance.TransitionToNextScene(hubSceneNumber); // Load the appropriate scene based on index. 
-            }
-            else if (!introComplete && !isBeginningCutscene)
-            {
-                introComplete = true; 
-            }
-
-            if (isInMinigame)
-            {
-                if (timer != null)
-                {
-                    timer.BeginTimer(); // Start the timer after dialogue ends, if we are in a minigame. 
-                }
-            }
         } 
     }
 
@@ -274,5 +258,65 @@ public class StoryManager : MonoBehaviour
     {
         currentIndex = 0; 
         dialoguePanel.SetActive(false); 
+
+        if (playerScript != null)
+        {   
+            playerScript.OnEnable(); // Re-enable player input again. 
+        }
+
+        if (isBeginningCutscene) // Load hub scene if this was the beginning cutscene. 
+        {
+            TransitionManager.Instance.TransitionToNextScene(hubSceneNumber); // Load the appropriate scene based on index. 
+        }
+        else if (!introComplete && !isBeginningCutscene)
+        {
+            introComplete = true; 
+        }
+
+        else if (isInMinigame)
+        {
+            if (timer != null)
+            {
+                timer.BeginTimer(); // Start the timer after dialogue ends, if we are in a minigame. 
+            }
+            else if (timerRecord != null)
+            {
+                timerRecord.BeginRecord(); // Start the timer after dialogue ends, if we are in a minigame. 
+
+                if (lavaScript != null) // For specifically Lucifer's (Pride) minigame, aka the final boss. 
+                {
+                    lavaScript.isLavaRising = true; // Start rising the lava. 
+                }
+            }
+        }
+
+        else if (overallGM.prideStoryDone)
+        {
+            TransitionManager.Instance.TransitionToNextScene(titleSceneNumber); // Take back to title screen if this dialogue is from the Ending Scene. 
+                
+            // Reset all flags upon game restart for complete re-experience:
+            introComplete = false; // Reset static flag if player wants to play again. 
+                 
+            overallGM.lustComplete = false; 
+            overallGM.lustStoryDone = false;
+
+            overallGM.greedComplete = false; 
+            overallGM.greedStoryDone = false;
+
+            overallGM.wrathComplete = false; 
+            overallGM.wrathStoryDone = false;
+
+            overallGM.gluttonyComplete = false; 
+            overallGM.gluttonyStoryDone = false;
+
+            overallGM.envyComplete = false; 
+            overallGM.envyStoryDone = false;
+
+            overallGM.slothComplete = false; 
+            overallGM.slothStoryDone = false;
+
+            overallGM.prideComplete = false; 
+            overallGM.prideStoryDone = false; 
+        }
     }
 }

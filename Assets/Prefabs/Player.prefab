@@ -204,7 +204,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 23105c033663b054baa1e775941c1b58, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -329,7 +329,7 @@ MonoBehaviour:
   crouchDisableCollider: {fileID: 3376138844881762103}
   regularSpeed: 10
   crouchSpeed: 0.5
-  jumpForce: 8
+  jumpForce: 14
 --- !u!95 &5883991044843485790
 Animator:
   serializedVersion: 7
