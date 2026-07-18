@@ -11,8 +11,14 @@ public class Player : MonoBehaviour
     InputSystem_Actions controls;
     Friend friendScript; // Only for the final level (Lucifer's minigame). 
 
+    GameObject friendObj; // GameObject that contains the Friend's Rigidbody2D, Box Collider2D, Animator, and importantly the Transform components. 
+    string friendTag = "Friend"; 
+    Transform friendPosition; 
+    
     Vector2 moveInput; // Holds direction of where the player will move. 
 
+    GameObject camObj; // GameObject that holds the Cinemachine Camera component. 
+    string cameraTag = "Cinemachine Camera"; 
     CinemachineCamera cinemachineCamera; // The camera that is focused on the playable entity. 
 
     bool jumpPressed; // Flag for when the player presses jump. 
@@ -31,7 +37,7 @@ public class Player : MonoBehaviour
     [SerializeField] float regularSpeed = 10f; // Default speed of the player. 
     float currentSpeed; // Player's current speed. 
     [SerializeField] float crouchSpeed = 0.5f; // Crouch speed is half the regular speed. 
-    [SerializeField] float jumpForce = 8f; // How high the player should jump. 
+    [SerializeField] float jumpForce = 14f; // How high the player should jump. 
 
     float facingX; // For the direction the player is facing (positive = right, negative = left). 
 
@@ -54,6 +60,23 @@ public class Player : MonoBehaviour
         if (friendScript != null) // Only if the Friend.cs script is attached to the Player.cs's GameObject (meaning it is the final level against Lucifer).
         {
             friendScript.controls = controls; // Set Diego's controls to be the same as Isabel's. 
+        }
+
+        friendObj = GameObject.FindGameObjectWithTag(friendTag); 
+        if (friendObj != null) // Only found in Lucifer's (Pride) Scene. 
+        {
+            friendPosition = friendObj.transform; // Get the Friend's Transform component (its position). 
+        }
+
+        camObj = GameObject.FindGameObjectWithTag(cameraTag); 
+        if (camObj != null) // Only if the GameObject containing the Cinemachine Camera component exists in the Unity Scene (only Lucifer's / Pride Scene).
+        {
+            cinemachineCamera = camObj.GetComponent<CinemachineCamera>(); // Get the Cinemachine Camera component from the GameObject. 
+
+            if (cinemachineCamera != null)
+            {
+                cinemachineCamera.Follow = this.transform; // Initially follow the player (Isabel). 
+            }
         }
 
         animator = GetComponent<Animator>(); 
@@ -89,13 +112,13 @@ public class Player : MonoBehaviour
 
             friendScript.ResetInputs(); 
 
-            if (isPlayerControlled) // Follow Isabel if she is being controlled. 
+            if (cinemachineCamera != null && isPlayerControlled) // Follow Isabel if she is being controlled. 
             {
-                cinemachineCamera.Follow = transform; 
+                cinemachineCamera.Follow = this.transform; 
             }
-            else if (friendScript.isFriendControlled) // Follow Diego if he is being controlled.
+            else if (cinemachineCamera != null && friendScript.isFriendControlled) // Follow Diego if he is being controlled.
             {
-                cinemachineCamera.Follow = friendScript.gameObject.transform; 
+                cinemachineCamera.Follow = friendPosition; 
             }
 
             return; // Ends execution for this frame. 

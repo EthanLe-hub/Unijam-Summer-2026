@@ -17,7 +17,7 @@ public class LavaBubbleSpawn : MonoBehaviour
     float scalar = 0.05f; // Multiplier to adjust secondsPassed in relation to graviational multiplier. 
     float gravityMultiplier; 
 
-    float startingSpawnTime = 4f; // Original spawn time. 
+    [SerializeField] float startingSpawnTime = 4f; // Original spawn time. 
     float spawnTimer; // Time to spawn the lava bubbles (gets shorter as the game does on). 
     float calculatedDelay; // Rate that a lava bubble spawns.
 
@@ -37,7 +37,7 @@ public class LavaBubbleSpawn : MonoBehaviour
         {
             secondsPassed = timerRecord.recordTime; // Get the number of seconds that have passed.  
 
-            calculatedDelay = (40f - timerRecord.recordTime) * scalar; // Rate that a lava bubble spawns. 
+            calculatedDelay = (60f - timerRecord.recordTime) * scalar; // Rate that a lava bubble spawns. 
 
             if (calculatedDelay < 0.75f) // Cap is 0.75 seconds per coin spawn. 
             {

@@ -30,7 +30,7 @@ public class Friend : MonoBehaviour
     [SerializeField] float regularSpeed = 10f; // Default speed of the player. 
     float currentSpeed; // Player's current speed. 
     [SerializeField] float crouchSpeed = 0.5f; // Crouch speed is half the regular speed. 
-    [SerializeField] float jumpForce = 8f; // How high the player should jump. 
+    [SerializeField] float jumpForce = 14f; // How high the player should jump. 
 
     float facingX; // For the direction the player is facing (positive = right, negative = left). 
 
