@@ -23,6 +23,8 @@ public class StoryManager : MonoBehaviour
     Image characterArt; // Displays the character art. 
     string imageTag = "Character Art"; 
 
+    Button skipButton; // To skip the dialogue. 
+
     [TextArea(3,5)]
     [SerializeField] string[] characterLines; // Holds all of the dialogue by indices.
     [SerializeField] Sprite[] characterImages; // Holds all of the character art by indices. 
@@ -42,10 +44,12 @@ public class StoryManager : MonoBehaviour
     [SerializeField] float delayTime; // For any potential delays desired before showing the dialogue. 
 
     [SerializeField] bool isInMinigame = false; // Toggle between true or false if dialogue is happening in a minigame. 
+    bool minigameStarted = false; // Turns true once minigame begins. 
     [SerializeField] Timer timer; // Assign in Unity Inspector (for games that have a time limit). 
     [SerializeField] Record timerRecord; // Assign in Unity Inspector (for games that do not have a time limit and instead just records the player's time). 
 
     [SerializeField] Lava lavaScript; // Assign in Unity Inspector ONLY for Lucifer (Pride) Unity Scene. 
+    public bool failedLucifer = false; // Turns true if player dies in Lucifer (Pride) Scene. 
 
     void Awake()
     {
@@ -65,6 +69,12 @@ public class StoryManager : MonoBehaviour
         if (characterArt == null)
         {
             Debug.Log("Character art component not found!"); 
+        }
+
+        skipButton = GetComponentInChildren<Button>();
+        if (skipButton != null)
+        {
+            skipButton.onClick.AddListener(DisableDialogue); // Add listener that connects to the function that turns off the dialogue panel.  
         }
     }
 
@@ -273,7 +283,7 @@ public class StoryManager : MonoBehaviour
             introComplete = true; 
         }
 
-        else if (isInMinigame)
+        else if (isInMinigame && !minigameStarted)
         {
             if (timer != null)
             {
@@ -288,6 +298,16 @@ public class StoryManager : MonoBehaviour
                     lavaScript.isLavaRising = true; // Start rising the lava. 
                 }
             }
+
+            minigameStarted = true; // Minigame has now started. 
+        }
+
+        // If the player loses in Lucifer's Scene:
+        else if (failedLucifer && minigameStarted)
+        {
+            failedLucifer = false; // Reset flag back to false. 
+            minigameStarted = false; // Reset flag back to false. 
+            TransitionManager.Instance.TransitionToNextScene(hubSceneNumber); // Back to the Hub Scene. 
         }
 
         else if (overallGM.prideStoryDone)
@@ -317,6 +337,11 @@ public class StoryManager : MonoBehaviour
 
             overallGM.prideComplete = false; 
             overallGM.prideStoryDone = false; 
+        }
+
+        else if (minigameStarted)
+        {
+            minigameStarted = false; // Reset flag back to false. 
         }
     }
 }

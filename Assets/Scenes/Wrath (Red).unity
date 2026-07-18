@@ -1039,6 +1039,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: hubSceneNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: characterLines.Array.size
       value: 5
       objectReference: {fileID: 0}
