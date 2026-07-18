@@ -1,0 +1,64 @@
+// Ethan Le (7/17/2026):
+using UnityEngine; 
+using UnityEngine.InputSystem; 
+using UnityEngine.SceneManagement; 
+
+/**
+ * Script for handling which Unity Scene to open when the player enters a minigame door.
+**/
+public class ExitDoor : MonoBehaviour
+{
+    string playerTag = "Player"; 
+
+    bool inFrontOfDoor = false; // To mark when the player is in front of the door. 
+
+    [SerializeField] int sceneNumber; // Index of the Scene to load (the final cutscene Unity Scene). 
+
+    [SerializeField] GameplayUI gameplayUI; // To show indicator on how to enter the minigame doors. 
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag(playerTag))
+        {
+            inFrontOfDoor = true; 
+
+            if (inFrontOfDoor)
+            {
+                gameplayUI.ShowDoorButton(); 
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag(playerTag))
+        {
+            inFrontOfDoor = false; 
+
+            if (!inFrontOfDoor)
+            {
+                gameplayUI.HideDoorButton(); 
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (inFrontOfDoor == true && Keyboard.current.xKey.wasPressedThisFrame)
+        {
+            if (sceneNumber < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+            {
+                if (sceneNumber >= 0)
+                {
+                    OverallGameManager.Instance.prideComplete = true; // Player has successfully escaped Lucifer (Pride). 
+                    TransitionManager.Instance.TransitionToNextScene(sceneNumber); // Load the appropriate scene based on index. 
+                    //Debug.Log("Scene Number opened: " + sceneNumber); 
+                }
+            }
+            else
+            {
+                Debug.LogError("Scene " + sceneNumber + " was not found in Build Settings!"); 
+            }
+        }
+    }
+}

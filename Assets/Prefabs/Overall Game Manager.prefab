@@ -74,5 +74,9 @@ MonoBehaviour:
   slothCharacterImages: []
   prideComplete: 0
   prideStoryDone: 0
-  prideCharacterLines: []
-  prideCharacterImages: []
+  prideCharacterLines:
+  - YOU'RE ALIVE!
+  - 'I know. '
+  prideCharacterImages:
+  - {fileID: 0}
+  - {fileID: 0}

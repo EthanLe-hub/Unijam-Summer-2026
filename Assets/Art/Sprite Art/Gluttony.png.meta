@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 49e674b7ce8b6e143a5886ab48b01fab
+guid: e7fc97d238499104aa490ce0937e308a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2121107193099552017
-    second: Greed Door_0
+      213: 7889633052716870788
+    second: Gluttony_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Greed Door_0
+      name: Gluttony_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 49
-        width: 326
-        height: 584
+        x: 46
+        y: 40
+        width: 327
+        height: 504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fea76c8fe305092e0800000000000000
-      internalID: -2121107193099552017
+      spriteID: 48cae5bd57b9d7d60800000000000000
+      internalID: 7889633052716870788
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Greed Door_0: -2121107193099552017
+      Gluttony_0: 7889633052716870788
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

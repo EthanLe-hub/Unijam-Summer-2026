@@ -1,4 +1,5 @@
 // Ethan Le (7/11/2026):
+using Unity.Cinemachine; // For the camera that follows the playable entity. 
 using UnityEngine; 
 using UnityEngine.InputSystem; // For "Keyboard.current.someKey.wasPressedThisFrame" logic. 
 
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     Friend friendScript; // Only for the final level (Lucifer's minigame). 
 
     Vector2 moveInput; // Holds direction of where the player will move. 
+
+    CinemachineCamera cinemachineCamera; // The camera that is focused on the playable entity. 
 
     bool jumpPressed; // Flag for when the player presses jump. 
     bool crouchPressed; // Flag for when the player presses crouch. 
@@ -85,6 +88,16 @@ public class Player : MonoBehaviour
             ResetInputs(); // Ensures neither character gets stuck running/sliding. 
 
             friendScript.ResetInputs(); 
+
+            if (isPlayerControlled) // Follow Isabel if she is being controlled. 
+            {
+                cinemachineCamera.Follow = transform; 
+            }
+            else if (friendScript.isFriendControlled) // Follow Diego if he is being controlled.
+            {
+                cinemachineCamera.Follow = friendScript.gameObject.transform; 
+            }
+
             return; // Ends execution for this frame. 
         }
 
