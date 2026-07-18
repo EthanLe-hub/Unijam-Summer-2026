@@ -7,8 +7,8 @@ using UnityEngine.UI;
 **/
 public class Lava : MonoBehaviour
 {
-    public float riseSpeed = 1.0f; // Speed of the lava rising. 
-    public float maxHeight = 10.0f; // Max height of the lava. 
+    public float riseSpeed = 0.75f; // Speed of the lava rising. 
+    public float maxHeight = 30.0f; // Max height of the lava. 
     private float currentHeight; // Current lava height (determined by placement in the Unity Scene). 
 
     string playerTag = "Player";

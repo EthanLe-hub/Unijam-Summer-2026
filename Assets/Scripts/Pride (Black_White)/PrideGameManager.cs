@@ -34,6 +34,7 @@ public class PrideGameManager : MonoBehaviour
                 timerRecord.StopRecord(); // Stop the timer from continuing. 
                 dialogueComplete = true; 
                 storyManager.StartDialogue(lostCharacterLines, lostCharacterImages); 
+                storyManager.failedLucifer = true; // Flag so the game knows when to take the player back to the hub after defeat dialogue plays. 
             }
         }
     }
