@@ -51,15 +51,96 @@ MonoBehaviour:
   greedComplete: 0
   greedStoryDone: 0
   greedCharacterLines:
-  - Congratulations! How was the Greed trial?
+  - Congratulations! How was the Greed Trial?
   - It was... interesting.
+  - I was instructed to grab coins falling from the sky.
+  - 'Ah, classic Greed at its core. '
+  - It felt... wrong though.
+  - Don't fight the feeling, Isabel! Sometimes, it can be a lesson for you!
+  - Your friend, Diego... he's hospitalized right now, isn't he?
+  - 'Yeah... '
+  - And I presume those medical bills must be extremely high, huh?
+  - That... that is correct...
+  - See, in order to save your friend, Diego, you have to pay a hefty price for him
+    to get treatment!
+  - When we get out of here, you're going to have to do more than just use your own
+    savings to pay for Diego's hospital bills.
+  - Wha-what do you mean?
+  - There's no other way around it, dear Isabel. You know what you have to do.
+  - ...
+  - You mean... steal people's money?
+  - 'Unfortunately... yes. More than that: rob banks too. It is sinful, I know. But
+    I promised I would help you heal Diego.'
+  - This is one way we're going to do it.
   greedCharacterImages:
   - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
   - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
   wrathComplete: 0
   wrathStoryDone: 0
-  wrathCharacterLines: []
-  wrathCharacterImages: []
+  wrathCharacterLines:
+  - You've passed the Wrath Trial! How do you feel?
+  - I feel... energized? Stronger?
+  - What about your anger? How did it feel to let it all out?
+  - I... I didn't feel anger. Wha-what are you talking about?
+  - Isabel... what's wrong?
+  - ...
+  - I know you got anger inside you. Anger from being the cause of your friend's
+    dire situation, huh?
+  - ...
+  - Feeling guilty about it, huh? Beating yourself up over it?
+  - It was my idea to split up in the ancient ruins. I did it so we could cover more
+    ground.
+  - Now... looking back on it...
+  - You believe it was your fault, don't you?
+  - ...
+  - Let it all out, Isabel. Stomp the ground, punch anything and everything around
+    you!
+  - Let out your wrath, as the Wrath Trial taught you!
+  - UGHHH!!
+  - 'I... I... '
+  - '*stomps the ground*'
+  - '*screams*'
+  - '*aggressively throws a nearby rock into the wall*'
+  - Atta, girl. And maybe... just maybe... you'll realize that you do not need to
+    carry this weight on your shoulders anymore...
+  wrathCharacterImages:
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
   gluttonyComplete: 0
   gluttonyStoryDone: 0
   gluttonyCharacterLines: []
@@ -75,8 +156,32 @@ MonoBehaviour:
   prideComplete: 0
   prideStoryDone: 0
   prideCharacterLines:
-  - YOU'RE ALIVE!
-  - 'I know. '
+  - DIEGO!
+  - ISABEL!
+  - '*hug*'
+  - Diego... you're all better!
+  - I... I guess I am!
+  - Escaping Lucifer's Trial room must've worked some magic on my body or something.
+  - Let's get out of here, Diego. I cannot stand another moment of being in this
+    Hellhole.
+  - Haha, I agree. Let's go.
+  - '*The two friends then exit through a portal created from beating Lucifer''s
+    Trial*'
+  - '*With that, they teleported back to the real world, ready for their next archaeologist
+    expedition*'
+  - '*This time, being sure to stick close together... and, of course, never reading
+    from an ancient cursed book again*'
+  - '*THE END!*'
   prideCharacterImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

@@ -31,6 +31,7 @@ public class GreedGameManager : MonoBehaviour
             {
                 dialogueComplete = true; 
                 OverallGameManager.Instance.greedComplete = true; // Greed game has been complete. 
+                OverallGameManager.Instance.TryUnlockFinal(); // Try to unlock the final level.
                 storyManager.StartDialogue(victoryCharacterLines, victoryCharacterImages); 
             }
             // Defeat (player did not collect enough coins in time):

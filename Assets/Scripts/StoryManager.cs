@@ -23,6 +23,10 @@ public class StoryManager : MonoBehaviour
     Image characterArt; // Displays the character art. 
     string imageTag = "Character Art"; 
 
+    string introSceneTag = "Intro Cutscene"; 
+    GameObject cutsceneObj; // GameObject holding the image for the intro cutscene. 
+    Image introCutscene; // Displays the cutscene for specifically the intro (the hospital sequence).
+
     Button skipButton; // To skip the dialogue. 
 
     [TextArea(3,5)]
@@ -31,6 +35,9 @@ public class StoryManager : MonoBehaviour
 
     string[] characterLinesToDisplay; // The official array dialogue being displayed. 
     Sprite[] characterImagesToDisplay; // The official character art being displayed. 
+
+    // Optional cutscene image array only for the intro:
+    [SerializeField] Sprite[] introCutscenesToDisplay; // The official intro cutscene being displayed. 
 
     private int currentIndex = 0; // Important to correspond the character line to the correct character art. 
 
@@ -75,6 +82,12 @@ public class StoryManager : MonoBehaviour
         if (skipButton != null)
         {
             skipButton.onClick.AddListener(DisableDialogue); // Add listener that connects to the function that turns off the dialogue panel.  
+        }
+
+        cutsceneObj = GameObject.FindGameObjectWithTag(introSceneTag); 
+        if (cutsceneObj != null)
+        {
+            introCutscene = cutsceneObj.GetComponent<Image>(); // Get the image for the intro cutscene, if the GameObject holding it is found in the Unity Scene.
         }
     }
 
@@ -243,6 +256,11 @@ public class StoryManager : MonoBehaviour
         characterText.text = characterLinesToDisplay[currentIndex]; // Index 0 of the array of character dialogues. 
 
         characterArt.sprite = characterImagesToDisplay[currentIndex]; // Index 0 of the array of character art. 
+
+        if (cutsceneObj != null) // Only if this is the intro cutscene (in which this GameObject will be found, and thus is not null).
+        {
+            introCutscene.sprite = introCutscenesToDisplay[currentIndex]; // Index 0 of the array of intro cutscenes. 
+        }
     }
 
     void NextLine()

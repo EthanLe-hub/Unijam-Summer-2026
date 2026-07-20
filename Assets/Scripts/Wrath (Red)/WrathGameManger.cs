@@ -16,6 +16,18 @@ public class WrathGameManager : MonoBehaviour
     int currentClicks;
     bool gameActive = false;
     bool gameStarted = false;
+
+    bool dialogueComplete = false; 
+
+    [TextArea(3,5)]
+    [SerializeField] string[] victoryCharacterLines; // Holds all of the dialogue by indices.
+    [SerializeField] Sprite[] victoryCharacterImages; // Holds all of the character art by indices. 
+
+    [TextArea(3,5)]
+    [SerializeField] string[] lostCharacterLines; // Holds all of the dialogue by indices.
+    [SerializeField] Sprite[] lostCharacterImages; // Holds all of the character art by indices. 
+
+    [SerializeField] StoryManager storyManager; // Assign in Unity Inspector. 
     
     void Start()
     {
@@ -70,15 +82,24 @@ public class WrathGameManager : MonoBehaviour
 
         endPanel.SetActive(true);
         
-        if (won)
+        if (!dialogueComplete)
         {
-            endMessageText.text = "WRATH CONQUERED!";
-            // Debug.Log("Player won!");
-        }
-        else
-        {
-            endMessageText.text = "FAILED...";
-            // Debug.Log("Player lost");
+            if (won)
+            {
+                dialogueComplete = true; 
+                endMessageText.text = "WRATH CONQUERED!";
+                OverallGameManager.Instance.wrathComplete = true; 
+                OverallGameManager.Instance.TryUnlockFinal(); // Try to unlock the final level. 
+                storyManager.StartDialogue(victoryCharacterLines, victoryCharacterImages); 
+                // Debug.Log("Player won!");
+            }
+            else
+            {
+                dialogueComplete = true; 
+                endMessageText.text = "FAILED...";
+                storyManager.StartDialogue(lostCharacterLines, lostCharacterImages); 
+                // Debug.Log("Player lost");
+            }
         }
     }
     
