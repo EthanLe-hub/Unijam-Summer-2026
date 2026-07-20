@@ -648,7 +648,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
   lostCharacterLines:
   - What? Are ya too generous or something?
-  - Can't believe ya ain't a greedy person like I expected.
+  - Ya gotta be greedy in order to make it in this world, ya know.
   - Whatever. Leave, lowly being. Exit via the left door and try again.
   lostCharacterImages:
   - {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
@@ -1294,6 +1294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 2
   gameplayUI: {fileID: 3518773682626366269}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!70 &906666506
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1399,7 +1403,7 @@ Transform:
   m_GameObject: {fileID: 906666504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.15, y: -3.51, z: 0}
+  m_LocalPosition: {x: -6.98, y: -3.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

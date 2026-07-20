@@ -854,6 +854,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 4
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 8
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!1 &579088517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1722,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 3
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!70 &903008271
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2395,6 +2407,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 7
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!1 &1293123265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,6 +2685,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 5
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!1 &1455280467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,6 +2833,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 6
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 0
+  storyManager: {fileID: 0}
+  unlockLines: []
+  unlockImages: []
 --- !u!1001 &1514522578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3504,6 +3528,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinigameDoor
   sceneNumber: 9
   gameplayUI: {fileID: 2070960313}
+  doorNumber: 9
+  storyManager: {fileID: 764688728912396291}
+  unlockLines:
+  - You must beat the Wrath and Greed Trials first to unlock.
+  unlockImages:
+  - {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
 --- !u!1001 &1847873187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4236,6 +4266,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
   m_PrefabInstance: {fileID: 764688728912396289}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &764688728912396291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+  m_PrefabInstance: {fileID: 764688728912396289}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c33d0cadfb59a4a867da178b0302a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoryManager
 --- !u!1001 &2482800822410356541
 PrefabInstance:
   m_ObjectHideFlags: 0

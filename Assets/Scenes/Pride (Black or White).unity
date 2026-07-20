@@ -3154,8 +3154,8 @@ Transform:
   m_GameObject: {fileID: 1258606273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5452, y: -13.5846, z: 0}
-  m_LocalScale: {x: 39.713852, y: 12.3491, z: 1}
+  m_LocalPosition: {x: 0.488, y: -20.4385, z: 0}
+  m_LocalScale: {x: 46.46299, y: 26.056992, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3892,49 +3892,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: characterLines.Array.size
-      value: 1
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: characterImages.Array.size
-      value: 1
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[0]'
-      value: 'Time to die. '
+      value: Huh, I can already enter the final trial even though I only beat 2 trials.
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[1]'
-      value: Ya look mighty fine for grabba me some delicious coins!
+      value: Weird, right? Oh! Look ahead!
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[2]'
-      value: ...
+      value: ... DIEGO??
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[3]'
-      value: Ya know I am correct! Da king of all riches, Mammon, is never wrong!
+      value: Ugh...
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[4]'
-      value: Ya goal is simple. Get me 30 coins falling from da sky before time's
-        up.
+      value: Isabel...?
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[5]'
-      value: Fail and I'm afraid you'll be stuck in an eternal Hell.
+      value: 'Diego!! Oh my goodness, I found you!! '
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterLines.Array.data[6]'
-      value: Wait, you're already in Hell! HAH HAH!
+      value: Wait, but how did you end up in this trial room?
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[7]'
+      value: Isabel... that angel... Gabriel...
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[8]'
+      value: Hmm?
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[9]'
+      value: He's... he's not Gabriel...
       objectReference: {fileID: 0}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
+      objectReference: {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[2]'
       value: 
@@ -3942,19 +3953,219 @@ PrefabInstance:
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[3]'
       value: 
-      objectReference: {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[4]'
       value: 
-      objectReference: {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[5]'
       value: 
-      objectReference: {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[6]'
       value: 
-      objectReference: {fileID: 21300000, guid: f512738b13436404aac976143cc332c1, type: 3}
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[7]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[8]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[9]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[10]'
+      value: He kidnapped me...
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[11]'
+      value: He's... Lucifer...
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[12]'
+      value: Oh what a beautiful reunion!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[13]'
+      value: Oh how clever am I!! You should realize how dumb you are, Isabel!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[14]'
+      value: I played you like a squirrel trying to catch a deliberately-placed fake
+        acorn!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[15]'
+      value: Aren't I so smart? And aren't you so stupid? I am the greatest!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[16]'
+      value: Gabriel... I mean... Lucifer?? Wh-why??
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[17]'
+      value: 'What? You thought I was going to help you and your friend? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[18]'
+      value: 'This was all for my own entertainment! To watch you two break down! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[19]'
+      value: TO WATCH YOU SUFFER!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[20]'
+      value: 'Even better: I KILLED the other 4 demons just so I can witness this
+        very moment unfold faster! Aren''t I the greatest?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[21]'
+      value: Isabel... you have to get out of here...
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[22]'
+      value: Diego... I left your side once... in the ancient ruins.
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[23]'
+      value: I'm not going to leave your side again.
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[24]'
+      value: I am too weak... you have to go...
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[25]'
+      value: OH THE DRAMA, OH THE TENSION! I LOVE IT!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[26]'
+      value: DO IT, ISABEL! EMBRACE YOUR SELFISHNESS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[27]'
+      value: Leave your stupid injured friend behind! TAKE PRIDE IN YOUR BETTER CONDITION
+        THAN THAT OF THAT BUFFOON!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[28]'
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[29]'
+      value: No, Lucifer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[30]'
+      value: Hmm??
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[31]'
+      value: I'm not leaving him. We're getting out of here... together.
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterLines.Array.data[32]'
+      value: So be it then. Good luck trying to escape the rising lava while carrying
+        that boy! MWAHAHAHA!
+      objectReference: {fileID: 0}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[10]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[11]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[12]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[13]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[14]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[15]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[16]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[17]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a1d4305817b1de47a08d4cfb1b46287, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[18]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[19]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[20]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[21]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[22]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[23]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[24]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 32d13f4f1216b0140ac0f78369f2edfa, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[25]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[26]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[27]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[28]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[29]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[30]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[31]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 095753ddec3dd4c4e84037dfda6e1f9b, type: 3}
+    - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: 'characterImages.Array.data[32]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
     - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5700,9 +5911,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrideGameManager
   timerRecord: {fileID: 1671269137}
   lostCharacterLines:
-  - You lose.
+  - MWAHAHAHA! GET BURNED! DIE!!
   lostCharacterImages:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 710ee39b772e91c46b53d53255593ecd, type: 3}
   storyManager: {fileID: 1628873235}
   lavaScript: {fileID: 1258606274}
 --- !u!114 &1974492042
@@ -6371,7 +6582,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 63cdbb3abb049b04a840f8c00bddbfed, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2f0fa4d615c719947aec41fef026aa40, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1

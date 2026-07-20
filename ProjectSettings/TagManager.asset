@@ -10,6 +10,7 @@ TagManager:
   - Friend
   - Lava
   - Cinemachine Camera
+  - Intro Cutscene
   layers:
   - Default
   - TransparentFX

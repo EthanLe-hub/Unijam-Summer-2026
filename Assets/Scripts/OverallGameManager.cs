@@ -9,6 +9,8 @@ public class OverallGameManager : MonoBehaviour
 {
     public static OverallGameManager Instance; // Global variable holding this script, which any outside script can access. 
 
+    public bool unlockFinal = false; 
+
     // Flags for when minigames are complete and their story completions:
     public bool lustComplete = false; // Lust minigame completion flag. 
     public bool lustStoryDone = false; 
@@ -56,5 +58,13 @@ public class OverallGameManager : MonoBehaviour
 
         Instance = this; // Otherwise, create the global instance for the first time. 
         DontDestroyOnLoad(gameObject); // Script persists between scene loads. 
+    }
+
+    public void TryUnlockFinal()
+    {
+        if (greedComplete && wrathComplete)
+        {
+            unlockFinal = true; 
+        }
     }
 }

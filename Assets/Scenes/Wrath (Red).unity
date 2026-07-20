@@ -351,10 +351,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2025335209}
-  - {fileID: 1002282834}
   - {fileID: 956618115}
   - {fileID: 1526379982}
   - {fileID: 976337598}
+  - {fileID: 1002282834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1074,11 +1074,11 @@ PrefabInstance:
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[0]'
       value: 
-      objectReference: {fileID: 5014520419438884369, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+      objectReference: {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[1]'
       value: 
-      objectReference: {fileID: 5014520419438884369, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+      objectReference: {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[2]'
       value: 
@@ -1086,11 +1086,11 @@ PrefabInstance:
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[3]'
       value: 
-      objectReference: {fileID: 5014520419438884369, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+      objectReference: {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
     - target: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: 'characterImages.Array.data[4]'
       value: 
-      objectReference: {fileID: 5014520419438884369, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+      objectReference: {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
     - target: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1171,6 +1171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3929776039162771538, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 222
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929776039162771538, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -78
+      objectReference: {fileID: 0}
     - target: {fileID: 7321753140033876865, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -1185,6 +1193,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3125741390450905566, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
   m_PrefabInstance: {fileID: 1002282833}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1002282835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 129979084875831417, guid: 2cbd95f064d6b814e8767afc0211af69, type: 3}
+  m_PrefabInstance: {fileID: 1002282833}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c33d0cadfb59a4a867da178b0302a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoryManager
 --- !u!1 &1012750678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1868,27 @@ MonoBehaviour:
   clickCounterText: {fileID: 1012750680}
   endPanel: {fileID: 976337597}
   endMessageText: {fileID: 2073680993}
+  victoryCharacterLines:
+  - GOOD JOB!!!!
+  - YOU HAVE SUCCESSFULLY LET OUT YOUR ANGERRRRRR!!
+  - KEEP PUNCHING, KEEP KICKING, KEEP LETTING LOOSE YOUR RAGE!!
+  - FOR VIOLENCE IS THE WAY TO GO!!
+  victoryCharacterImages:
+  - {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+  - {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+  - {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+  - {fileID: 21300000, guid: b9a46114f99bf4261939046a36c00a80, type: 3}
+  lostCharacterLines:
+  - YOU'RE PATHETIC.
+  - WEAK.
+  - HELPLESS.
+  - COME BACK AND TRY AGAIN, WHEN YOU FEEL ANGRY ENOUGH.
+  lostCharacterImages:
+  - {fileID: 21300000, guid: 0dfc29cee39ef044586a65c3e89261ca, type: 3}
+  - {fileID: 21300000, guid: 0dfc29cee39ef044586a65c3e89261ca, type: 3}
+  - {fileID: 21300000, guid: 0dfc29cee39ef044586a65c3e89261ca, type: 3}
+  - {fileID: 21300000, guid: 0dfc29cee39ef044586a65c3e89261ca, type: 3}
+  storyManager: {fileID: 1002282835}
 --- !u!114 &1380629161
 MonoBehaviour:
   m_ObjectHideFlags: 0
